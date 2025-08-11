@@ -6,7 +6,7 @@ A high-performance batching proxy for embedding generation, built with Rust.
 
 * **[Tokio](https://tokio.rs/)** – async runtime
 * **[tako-rs](https://github.com/yourrepo/tako-rs)** – custom high-performance web framework (in production you’d likely use Axum or Actix)
-* **[FastEmbed](https://github.com/Anush008/fastembed-rs)** – Rust wrapper for ONNX Runtime, used for embedding generation ((chosen due to limitations on Mac M1 hardware)[https://github.com/huggingface/text-embeddings-inference?tab=readme-ov-file#apple-m1m2-arm64-architectures])
+* **[FastEmbed](https://github.com/Anush008/fastembed-rs)** – Rust wrapper for ONNX Runtime, used for embedding generation ([chosen due to limitations on Mac M1 hardware](https://github.com/huggingface/text-embeddings-inference?tab=readme-ov-file#apple-m1m2-arm64-architectures))
 
 
 ## 🚀 Usage
