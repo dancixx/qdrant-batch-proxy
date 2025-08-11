@@ -38,14 +38,15 @@ impl BatchEngine {
             let mut batch = Vec::<BatchItem>::with_capacity(self.max_batch_size);
             batch.push(first);
 
+            let sleep = sleep_until(deadline);
+            tokio::pin!(sleep);
+
             // wait for the next item or timeout
             while batch.len() < self.max_batch_size {
                 let now = Instant::now();
                 if now >= deadline {
                     break;
                 }
-                let sleep = sleep_until(deadline);
-                tokio::pin!(sleep);
                 let next = tokio::select! {
                     _ = &mut sleep => None,
                     v = rx.recv() => v
