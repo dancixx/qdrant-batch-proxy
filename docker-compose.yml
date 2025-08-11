@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: qdrant-batch-proxy:latest
+    container_name: qdrant-batch-proxy
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
